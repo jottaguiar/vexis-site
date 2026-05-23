@@ -49,8 +49,8 @@ section{padding:100px 0}
 .btn-primary:hover{background:#d0f0ba;transform:translateY(-1px)}
 .btn-outline{background:transparent;color:var(--w);border:1px solid rgba(255,255,255,0.25)}
 .btn-outline:hover{border-color:var(--g);color:var(--g)}
-.btn-wa{background:#25D366;color:#fff}
-.btn-wa:hover{background:#1ebe5d;transform:translateY(-1px)}
+.btn-wa{background:var(--g);color:var(--dark)}
+.btn-wa:hover{background:#d0f0ba;color:var(--dark);transform:translateY(-1px)}
 
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:1000;
@@ -228,7 +228,7 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
   </ul>
   <div class="nav-cta">
     <a href="#contato" class="btn btn-outline">Fale com a gente</a>
-    <a href="https://wa.me/5541999999999?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-primary" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-primary" target="_blank">WhatsApp</a>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -243,14 +243,13 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
   <a href="#para-quem" onclick="closeMenu()">Para quem</a>
   <a href="#como-funciona" onclick="closeMenu()">Como funciona</a>
   <a href="#contato" onclick="closeMenu()">Contato</a>
-  <a href="https://wa.me/5541999999999?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-wa" target="_blank">WhatsApp ↗</a>
+  <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-wa" target="_blank">WhatsApp ↗</a>
 </div>
 
 <!-- HERO -->
 <section id="hero" class="hex-bg">
 <div class="container">
   <div class="hero-content">
-    <div class="hero-tag"><span class="pulse"></span>Sistema de Credenciamento</div>
     <h1>CREDENCIAMENTO<br>QUE <span class="acc">NÃO PARA.</span></h1>
     <p class="mt-2" style="max-width:560px;font-size:clamp(15px,1.6vw,19px)">Operamos o credenciamento do seu evento com tecnologia própria. <strong>100% offline</strong> — sem depender da internet do local.</p>
     <div class="hero-stats">
@@ -259,10 +258,6 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
       <div class="hstat"><div class="hstat-n">8+</div><div class="hstat-l">módulos integrados</div></div>
     </div>
     <div class="hero-ctas">
-      <a href="https://wa.me/5541999999999?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-wa" target="_blank">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.37 17.04 14.27C16.97 14.17 16.81 14.1 16.56 13.98C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.88 13.86 13.71 14.05C13.56 14.25 13.39 14.27 13.16 14.16C13 14.11 12.43 13.92 11.75 13.32C11.22 12.86 10.86 12.28 10.75 12.05C10.64 11.82 10.74 11.7 10.85 11.58C10.96 11.47 11.13 11.29 11.25 11.14C11.38 10.99 11.42 10.89 11.5 10.7C11.58 10.54 11.54 10.39 11.47 10.27C11.42 10.17 11.06 8.93 10.86 8.42C10.67 7.92 10.46 7.96 10.31 7.95C10.16 7.94 10 7.93 9.83 7.93C9.66 7.93 9.38 7.99 9.15 8.25C8.93 8.5 8.2 9.19 8.2 10.4C8.2 11.6 9.17 12.77 9.3 12.94C9.43 13.1 11.06 15.56 13.5 16.5C14.66 17 15.58 17.22 16.31 17.38C17.06 17.56 17.73 17.53 18.27 17.44C18.87 17.34 20.22 16.74 20.5 16.1C20.77 15.46 20.77 14.92 20.7 14.8C20.63 14.67 20.47 14.61 20.22 14.5L8.53 7.33Z"/></svg>
-        Falar pelo WhatsApp
-      </a>
       <a href="#modulos" class="btn btn-outline">Ver módulos ↓</a>
     </div>
   </div>
@@ -355,37 +350,31 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg></div>
       <div class="mod-name">Credenciamento</div>
       <p class="mod-desc">QR Code, CPF ou Face ID. Self-service ou balcão. Impressão em menos de 8 segundos.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 12h-4m0 0V8m0 4v4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
       <div class="mod-name">Controle de Entrada</div>
       <p class="mod-desc">Valida o QR único do crachá. Token criptografado invalidado a cada reimpressão.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 0-3 .5-3 2v14c0 1.5 1.5 2 3 2s3-.5 3-2V5c0-1.5-1.5-2-3-2z"/><path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/></svg></div>
       <div class="mod-name">Chapelaria</div>
       <p class="mod-desc">Guarda-volumes digital. Etiqueta numerada vinculada ao crachá. Retirada por QR.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="3"/><path d="M6.5 17.5c.3-1.2 1-2.3 2-3M17.5 17.5c-.3-1.2-1-2.3-2-3M12 3v2M12 19v2"/></svg></div>
       <div class="mod-name">Plenária</div>
       <p class="mod-desc">Controle de presença por sala e palestra. Relatório de audiência por sessão.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
       <div class="mod-name">Cred Local</div>
       <p class="mod-desc">Cadastra no local quem não está na lista. 100% offline com sync automático.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
       <div class="mod-name">Dashboard</div>
       <p class="mod-desc">KPIs em tempo real para a equipe e para o cliente. Credenciados, fila, pico.</p>
-      <span class="mod-tag tag-g">Pronto</span>
     </div>
     <div class="mod-cell fade-up">
       <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h11"/><circle cx="19" cy="18" r="3"/><path d="M21 20l-1.5-1.5"/></svg></div>
@@ -530,77 +519,60 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
 <!-- CONTATO -->
 <section id="contato">
 <div class="container">
-  <div class="contato-grid">
-    <div class="contato-info">
-      <span class="lbl">Contato</span>
-      <h3 class="fade-up">Vamos falar sobre<br>o seu evento.</h3>
-      <p class="mt-1 fade-up">Conte os detalhes do evento e receba uma proposta personalizada. Respondemos em até 24 horas.</p>
-      <div class="cinfo-items">
-        <div class="cinfo-item fade-up">
-          <div class="cicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke="var(--g)"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.65 3.4 2 2 0 0 1 3.62 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
-          <a href="https://wa.me/5541999999999" target="_blank">(41) 9 9999-9999</a>
-        </div>
-        <div class="cinfo-item fade-up">
-          <div class="cicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke="var(--g)"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <a href="mailto:jean@vexistech.com.br">jean@vexistech.com.br</a>
-        </div>
-        <div class="cinfo-item fade-up">
-          <div class="cicon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" stroke="var(--g)"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-          <a href="https://vexistech.com.br" target="_blank">vexistech.com.br</a>
-        </div>
-      </div>
-      <div class="mt-2 fade-up">
-        <a href="https://wa.me/5541999999999?text=Olá!%20Quero%20um%20orçamento%20para%20credenciamento%20do%20meu%20evento." class="btn btn-wa" target="_blank">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.37 17.04 14.27C16.97 14.17 16.81 14.1 16.56 13.98C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.88 13.86 13.71 14.05C13.56 14.25 13.39 14.27 13.16 14.16C13 14.11 12.43 13.92 11.75 13.32C11.22 12.86 10.86 12.28 10.75 12.05C10.64 11.82 10.74 11.7 10.85 11.58C10.96 11.47 11.13 11.29 11.25 11.14C11.38 10.99 11.42 10.89 11.5 10.7C11.58 10.54 11.54 10.39 11.47 10.27C11.42 10.17 11.06 8.93 10.86 8.42C10.67 7.92 10.46 7.96 10.31 7.95C10.16 7.94 10 7.93 9.83 7.93C9.66 7.93 9.38 7.99 9.15 8.25C8.93 8.5 8.2 9.19 8.2 10.4C8.2 11.6 9.17 12.77 9.3 12.94C9.43 13.1 11.06 15.56 13.5 16.5C14.66 17 15.58 17.22 16.31 17.38C17.06 17.56 17.73 17.53 18.27 17.44C18.87 17.34 20.22 16.74 20.5 16.1C20.77 15.46 20.77 14.92 20.7 14.8C20.63 14.67 20.47 14.61 20.22 14.5L8.53 7.33Z"/></svg>
-          Falar agora pelo WhatsApp
-        </a>
-      </div>
-    </div>
-
-    <div class="form-card fade-up">
-      <form onsubmit="submitForm(event)">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Nome</label>
-            <input type="text" name="nome" placeholder="Seu nome" required>
-          </div>
-          <div class="form-group">
-            <label>E-mail</label>
-            <input type="email" name="email" placeholder="seu@email.com" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Tipo de evento</label>
-            <select name="tipo">
-              <option value="">Selecione</option>
-              <option>Congresso / Conferência</option>
-              <option>Feira / Exposição</option>
-              <option>Evento corporativo</option>
-              <option>Workshop / Curso</option>
-              <option>Show / Festa</option>
-              <option>Outro</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Participantes esperados</label>
-            <select name="participantes">
-              <option value="">Selecione</option>
-              <option>Até 200</option>
-              <option>200 a 500</option>
-              <option>500 a 1.000</option>
-              <option>1.000 a 3.000</option>
-              <option>Mais de 3.000</option>
-            </select>
-          </div>
+  <div style="max-width:680px;margin:0 auto;text-align:center">
+    <span class="lbl fade-up">Contato</span>
+    <h2 class="fade-up">Vamos falar sobre<br><span class="acc">o seu evento.</span></h2>
+    <p class="fade-up mt-1">Conte os detalhes e receba uma proposta personalizada. Respondemos em até 24 horas.</p>
+  </div>
+  <div class="form-card fade-up" style="max-width:680px;margin:2.5rem auto 0">
+    <form onsubmit="submitForm(event)">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nome</label>
+          <input type="text" name="nome" placeholder="Seu nome" required>
         </div>
         <div class="form-group">
-          <label>Mensagem</label>
-          <textarea name="mensagem" placeholder="Conte um pouco sobre o evento: data, local, o que precisa..."></textarea>
+          <label>E-mail</label>
+          <input type="email" name="email" placeholder="seu@email.com" required>
         </div>
-        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px">Enviar mensagem →</button>
-      </form>
-    </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tipo de evento</label>
+          <select name="tipo">
+            <option value="">Selecione</option>
+            <option>Congresso / Conferência</option>
+            <option>Feira / Exposição</option>
+            <option>Evento corporativo</option>
+            <option>Workshop / Curso</option>
+            <option>Show / Festa</option>
+            <option>Outro</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Participantes esperados</label>
+          <select name="participantes">
+            <option value="">Selecione</option>
+            <option>Até 200</option>
+            <option>200 a 500</option>
+            <option>500 a 1.000</option>
+            <option>1.000 a 3.000</option>
+            <option>Mais de 3.000</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Mensagem</label>
+        <textarea name="mensagem" placeholder="Conte um pouco sobre o evento: data, local, o que precisa..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px">Enviar mensagem →</button>
+    </form>
+  </div>
+  <div style="text-align:center;margin-top:1.5rem" class="fade-up">
+    <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20um%20orçamento%20para%20credenciamento%20do%20meu%20evento." class="btn btn-primary" target="_blank" style="display:inline-flex;gap:8px;align-items:center">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.37 17.04 14.27C16.97 14.17 16.81 14.1 16.56 13.98C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.88 13.86 13.71 14.05C13.56 14.25 13.39 14.27 13.16 14.16C13 14.11 12.43 13.92 11.75 13.32C11.22 12.86 10.86 12.28 10.75 12.05C10.64 11.82 10.74 11.7 10.85 11.58C10.96 11.47 11.13 11.29 11.25 11.14C11.38 10.99 11.42 10.89 11.5 10.7C11.58 10.54 11.54 10.39 11.47 10.27C11.42 10.17 11.06 8.93 10.86 8.42C10.67 7.92 10.46 7.96 10.31 7.95C10.16 7.94 10 7.93 9.83 7.93C9.66 7.93 9.38 7.99 9.15 8.25C8.93 8.5 8.2 9.19 8.2 10.4C8.2 11.6 9.17 12.77 9.3 12.94C9.43 13.1 11.06 15.56 13.5 16.5C14.66 17 15.58 17.22 16.31 17.38C17.06 17.56 17.73 17.53 18.27 17.44C18.87 17.34 20.22 16.74 20.5 16.1C20.77 15.46 20.77 14.92 20.7 14.8C20.63 14.67 20.47 14.61 20.22 14.5L8.53 7.33Z"/></svg>
+      Falar agora pelo WhatsApp
+    </a>
   </div>
 </div>
 </section>
@@ -620,7 +592,7 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
       <li><a href="#contato">Contato</a></li>
     </ul>
   </div>
-  <p class="footer-copy">© 2026 Vexis Tech — Araucária, PR · jean@vexistech.com.br</p>
+  <p class="footer-copy">© 2026 Vexis Tech — Curitiba, PR · jean@vexistech.com.br</p>
 </div>
 </footer>
 
@@ -650,16 +622,18 @@ function submitForm(e) {
   const f = e.target;
   const nome = f.nome.value;
   const email = f.email.value;
-  const tipo = f.tipo.value;
-  const px = f.participantes.value;
+  const tipo = f.tipo.value || 'Não informado';
+  const px = f.participantes.value || 'Não informado';
   const msg = f.mensagem.value;
-  const text = encodeURIComponent(
-    `Olá! Vim pelo site da Vexis Tech.\n\n` +
-    `*Nome:* ${nome}\n*E-mail:* ${email}\n` +
-    `*Tipo de evento:* ${tipo}\n*Participantes:* ${px}\n` +
-    `*Mensagem:* ${msg}`
+  const subject = encodeURIComponent('Orçamento Vexis — ' + (tipo !== 'Não informado' ? tipo : 'Novo contato'));
+  const body = encodeURIComponent(
+    'Nome: ' + nome + '\n' +
+    'E-mail: ' + email + '\n' +
+    'Tipo de evento: ' + tipo + '\n' +
+    'Participantes esperados: ' + px + '\n\n' +
+    'Mensagem:\n' + msg
   );
-  window.open(`https://wa.me/5541999999999?text=${text}`, '_blank');
+  window.location.href = 'mailto:jean@vexistech.com.br?subject=' + subject + '&body=' + body;
 }
 </script>
 </body>
