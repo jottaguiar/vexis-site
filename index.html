@@ -2,11 +2,12 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<script>document.documentElement.className+=' js';</script>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Vexis Tech — Credenciamento inteligente para eventos</title>
-<meta name="description" content="Sistema de credenciamento que opera 100% offline. QR Code, Face ID e CPF. Sem depender da internet do evento.">
+<title>Vexis Tech — Ecossistema de tecnologia para eventos</title>
+<meta name="description" content="Ecossistema de tecnologia para eventos. Credenciamento, controle de acesso, plenária e mais — do pré ao pós-evento, em um só sistema. Arquitetura offline-first: se a internet do local cair, o evento não para.">
 <meta property="og:title" content="Vexis Tech — Credenciamento que não para">
-<meta property="og:description" content="Credenciamento inteligente para eventos. Offline-first, <8s por pessoa, módulos integrados.">
+<meta property="og:description" content="A Vexis cuida de tudo que envolve o participante — do briefing ao relatório. Ecossistema offline-first para eventos: credenciamento, controle de acesso, plenária e mais.">
 <meta property="og:url" content="https://vexistech.com.br">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,7 +20,15 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--dark);color:var(--w);font-family:'Barlow',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.6}
+body{color:var(--w);font-family:'Barlow',sans-serif;font-weight:400;overflow-x:hidden;line-height:1.6;
+  background:
+    radial-gradient(circle at 50% -8%, rgba(186,220,166,.07), transparent 55%),
+    radial-gradient(circle at 50% 108%, rgba(186,220,166,.05), transparent 55%),
+    repeating-linear-gradient(60deg,transparent,transparent 40px,rgba(186,220,166,.04) 40px,rgba(186,220,166,.04) 41px),
+    repeating-linear-gradient(-60deg,transparent,transparent 40px,rgba(186,220,166,.04) 40px,rgba(186,220,166,.04) 41px),
+    var(--dark);
+  background-attachment:fixed;
+  background-position:var(--hx,0px) var(--hy,0px)}
 
 /* TYPOGRAPHY */
 h1,h2,h3,.bc{font-family:'Barlow Condensed',sans-serif;font-weight:800;line-height:1.05}
@@ -38,9 +47,7 @@ section{padding:100px 0}
 
 /* HEX PATTERN */
 .hex-bg{position:relative}
-.hex-bg::before{content:'';position:absolute;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52'%3E%3Cpolygon fill='none' stroke='rgba(186,220,166,0.055)' stroke-width='1' points='30,2 56,16 56,44 30,58 4,44 4,16'/%3E%3C/svg%3E");
-  background-size:60px 52px}
+.hex-bg::before{content:none}
 .hex-bg .container{position:relative;z-index:1}
 
 /* BUTTON */
@@ -84,8 +91,8 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 .hero-ctas{display:flex;gap:14px;margin-top:2.5rem;flex-wrap:wrap}
 
 /* PROBLEMA */
-#problema{background:var(--dark2)}
-.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border-radius:16px;overflow:hidden;margin-top:3rem}
+#problema{background:transparent}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border-radius:16px;overflow:hidden;margin-top:2rem}
 .pain-card{background:var(--dark2);padding:32px 28px;transition:background .2s}
 .pain-card:hover{background:rgba(255,255,255,0.025)}
 .pain-n{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:48px;color:rgba(255,255,255,0.05);line-height:1;margin-bottom:12px}
@@ -94,25 +101,25 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 @media(max-width:767px){.pain-grid{grid-template-columns:1fr}}
 
 /* OFFLINE */
-#offline{background:var(--dark)}
-.off-block{background:rgba(186,220,166,0.04);border:1px solid rgba(186,220,166,0.15);border-radius:20px;padding:56px;margin-top:3rem}
-.off-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+#offline{background:transparent}
+.off-block{background:rgba(186,220,166,0.04);border:1px solid rgba(186,220,166,0.15);border-radius:20px;padding:36px;margin-top:2rem}
+.off-split{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start}
 .off-items{display:flex;flex-direction:column;gap:14px;margin-top:1.5rem}
 .off-item{display:flex;gap:12px;font-size:15px;line-height:1.6}
 .odot{width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0;margin-top:8px}
 .off-item span{color:rgba(255,255,255,0.65)}
-.arch-strip{display:flex;align-items:center;justify-content:center;gap:0;margin-top:3rem;background:rgba(0,0,0,0.3);border-radius:12px;padding:20px 32px;flex-wrap:wrap;gap:8px}
+.arch-strip{display:flex;align-items:center;justify-content:center;gap:0;margin-top:1.8rem;background:rgba(0,0,0,0.3);border-radius:12px;padding:16px 24px;flex-wrap:wrap;gap:8px}
 .as{text-align:center;padding:0 16px}
 .asn{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--g);margin-bottom:4px}
 .ast{font-size:12px;color:rgba(255,255,255,0.4)}
 .arr{color:var(--g);opacity:.3;font-size:20px;padding:0 4px}
-.off-quote{text-align:center;margin-top:2rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(18px,2.5vw,26px);color:var(--g)}
+.off-quote{text-align:center;margin-top:1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:clamp(18px,2.5vw,26px);color:var(--g)}
 @media(max-width:900px){.off-split{grid-template-columns:1fr}.off-block{padding:36px 28px}}
 
 /* MÓDULOS */
 #modulos{background:var(--dark2)}
 .mod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:16px;overflow:hidden;margin-top:3rem}
-.mod-cell{background:var(--dark2);padding:28px 24px;transition:background .2s;position:relative}
+.mod-cell{background:var(--dark2);padding:22px 18px;transition:background .2s;position:relative}
 .mod-cell:hover{background:rgba(255,255,255,0.025)}
 .mod-icon{width:44px;height:44px;border-radius:10px;background:var(--gd);border:1px solid rgba(186,220,166,0.15);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
 .mod-icon svg{stroke:var(--g)}
@@ -125,8 +132,8 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 @media(max-width:600px){.mod-grid{grid-template-columns:1fr}}
 
 /* VELOCIDADE */
-#velocidade{background:var(--dark)}
-.vel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:3rem}
+#velocidade{background:transparent}
+.vel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:2rem}
 .vel-card{border:1px solid var(--bd);border-radius:16px;padding:32px 28px;position:relative}
 .vel-card.best{border-color:rgba(186,220,166,0.3);background:var(--gd)}
 .vel-badge{position:absolute;top:16px;right:16px;background:var(--g);color:var(--dark);font-size:10px;font-weight:700;letter-spacing:1.5px;padding:3px 10px;border-radius:4px;text-transform:uppercase}
@@ -136,7 +143,7 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 .vel-cap{margin-top:8px;font-size:13px;color:var(--gray)}
 .vel-cap strong{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:20px;color:var(--w)}
 .vel-note{font-size:12px;margin-top:10px}
-.vel-bars{margin-top:3rem;display:flex;flex-direction:column;gap:14px}
+.vel-bars{margin-top:1.6rem;display:flex;flex-direction:column;gap:12px}
 .vbar-row{display:flex;align-items:center;gap:16px}
 .vbar-label{font-size:13px;color:var(--gray);min-width:180px}
 .vbar-bg{flex:1;height:8px;background:rgba(255,255,255,0.06);border-radius:4px;overflow:hidden}
@@ -145,20 +152,20 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 @media(max-width:900px){.vel-grid{grid-template-columns:1fr;gap:14px}.vbar-label{min-width:120px}}
 
 /* PARA QUEM */
-#para-quem{background:var(--dark2)}
-.pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:3rem}
-.pq-card{border:1px solid var(--bd);border-radius:20px;padding:40px 36px}
+#para-quem{background:transparent}
+.pq-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:2rem}
+.pq-card{border:1px solid var(--bd);border-radius:20px;padding:40px 36px;background:rgba(255,255,255,0.02)}
 .pq-card.hl{border-color:rgba(186,220,166,0.2);background:var(--gd)}
 .pq-type{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--g);font-weight:600;margin-bottom:1rem}
 .pq-title{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(24px,3vw,36px);color:var(--w);margin-bottom:1.25rem}
 .pq-items{display:flex;flex-direction:column;gap:10px}
 .pq-item{display:flex;gap:10px;font-size:14px;color:rgba(255,255,255,0.65);line-height:1.5}
-.pq-item::before{content:"✓";color:var(--g);font-weight:700;flex-shrink:0}
+.pq-item::before{content:"→";color:var(--g);font-weight:700;flex-shrink:0}
 @media(max-width:767px){.pq-grid{grid-template-columns:1fr}}
 
 /* COMO FUNCIONA */
 #como-funciona{background:var(--dark)}
-.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:16px;overflow:hidden;margin-top:3rem}
+.flow-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bd);border-radius:16px;overflow:hidden;margin-top:2rem}
 .fstep{background:var(--dark);padding:32px 28px;position:relative}
 .fstep:not(:last-child)::after{content:'';position:absolute;right:0;top:40px;width:1px;height:calc(100% - 80px);background:var(--bd)}
 .fnum{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:56px;color:rgba(186,220,166,0.1);line-height:1;margin-bottom:12px}
@@ -169,7 +176,7 @@ nav.scrolled{background:rgba(13,13,13,0.92);backdrop-filter:blur(20px);border-bo
 @media(max-width:500px){.flow-steps{grid-template-columns:1fr}}
 
 /* CONTATO */
-#contato{background:var(--dark2)}
+#contato{background:transparent}
 .contato-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:3rem}
 .contato-info h3{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:clamp(28px,3.5vw,44px);color:var(--w);margin-bottom:1rem}
 .cinfo-items{display:flex;flex-direction:column;gap:16px;margin-top:2rem}
@@ -190,7 +197,7 @@ input::placeholder,textarea::placeholder{color:rgba(255,255,255,0.25)}
 @media(max-width:900px){.contato-grid{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
 
 /* FOOTER */
-footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px}
+footer{background:transparent;border-top:1px solid var(--bd);padding:48px 0 32px}
 .footer-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:24px;flex-wrap:wrap}
 .footer-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;font-size:22px}
 .footer-logo .dot{color:var(--g)}
@@ -212,365 +219,449 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
 .mt-2{margin-top:2rem}
 .mt-3{margin-top:3rem}
 .divider{width:100%;height:1px;background:var(--bd);margin:0}
+
+/* ===== SCROLL FULL-PAGE ===== */
+html{scroll-padding-top:var(--nav-h)}
+section{min-height:100vh;display:flex;align-items:center;padding:calc(var(--nav-h) + 18px) 0 44px}
+section>.container{width:100%}
+@media(min-width:901px){
+  html{scroll-snap-type:y mandatory}
+  section{scroll-snap-align:start}
+}
+@media(max-width:900px){section{min-height:auto;padding:84px 0 56px}}
+
+/* ===== REVEAL ===== */
+.reveal{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1),letter-spacing .9s cubic-bezier(.2,.7,.2,1),filter .7s ease;transition-delay:calc(var(--i,0)*.08s)}
+.js .reveal{opacity:0;transform:translateY(26px)}
+.reveal.in{opacity:1;transform:none}
+/* "monta as letras": titulos/labels chegam com o espacamento abrindo e desblurando, bem sutil */
+.js h1.reveal,.js h2.reveal{letter-spacing:.06em;filter:blur(4px)}
+h1.reveal.in,h2.reveal.in{letter-spacing:0;filter:blur(0)}
+.js .lbl.reveal{letter-spacing:11px}
+.lbl.reveal.in{letter-spacing:5px}
+@media(prefers-reduced-motion:reduce){.js .reveal{opacity:1!important;transform:none!important}}
+
+/* ===== SPLASH ===== */
+#splash{position:fixed;inset:0;z-index:9999;background:var(--dark);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer;text-align:center;-webkit-tap-highlight-color:transparent;transition:transform .8s cubic-bezier(.76,0,.24,1),opacity .8s ease}
+#splash.hide{transform:translateY(-100%);opacity:0;pointer-events:none}
+#splash .s-layer{position:absolute;inset:-12%;pointer-events:none;will-change:transform}
+#splash .s-hex{background-image:repeating-linear-gradient(60deg,transparent,transparent 40px,rgba(186,220,166,.04) 40px,rgba(186,220,166,.04) 41px),repeating-linear-gradient(-60deg,transparent,transparent 40px,rgba(186,220,166,.04) 40px,rgba(186,220,166,.04) 41px)}
+#splash .s-hex2{background-image:repeating-linear-gradient(60deg,transparent,transparent 80px,rgba(186,220,166,.025) 80px,rgba(186,220,166,.025) 81px),repeating-linear-gradient(-60deg,transparent,transparent 80px,rgba(186,220,166,.025) 80px,rgba(186,220,166,.025) 81px)}
+#splash .s-glow{position:absolute;width:140vmin;height:140vmin;border-radius:50%;background:radial-gradient(circle,rgba(186,220,166,.10) 0%,transparent 60%);top:50%;left:50%;transform:translate(-50%,-50%);animation:spulse 4s ease-in-out infinite;pointer-events:none}
+@keyframes spulse{0%,100%{opacity:.55;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}}
+#splash .s-content{position:relative;z-index:5;text-align:center;will-change:transform}
+#splash .s-logo{font-family:'Barlow Condensed',sans-serif;font-weight:800;letter-spacing:.04em;line-height:1;font-size:clamp(56px,12vmin,120px);color:#fff;opacity:0;transform:scale(.94);animation:srise .9s cubic-bezier(.2,.7,.2,1) forwards .25s}
+#splash .s-logo .dot{color:var(--g)}
+#splash .s-logo .tech{color:var(--gray)}
+@keyframes srise{to{opacity:1;transform:scale(1)}}
+#splash .s-slogan{font-family:'Barlow',sans-serif;font-weight:300;text-transform:uppercase;color:var(--gray);font-size:clamp(11px,1.8vmin,15px);letter-spacing:.16em;margin-top:18px;line-height:1.7;opacity:0;animation:sslogan 1.1s ease forwards .9s}
+@keyframes sslogan{0%{opacity:0;letter-spacing:.3em}100%{opacity:1;letter-spacing:.16em}}
+#splash .s-line{width:0;height:1px;background:var(--g);margin:26px auto 0;animation:sline .8s ease forwards 1.1s}
+@keyframes sline{to{width:64px}}
+#splash .s-bar{position:absolute;bottom:0;left:0;height:3px;width:0;background:linear-gradient(90deg,transparent,var(--g));box-shadow:0 0 12px rgba(186,220,166,.6);animation:sload 2.6s cubic-bezier(.4,0,.1,1) forwards .4s}
+@keyframes sload{0%{width:0}70%{width:82%}100%{width:100%}}
+#splash .s-status{position:absolute;bottom:22px;width:100%;text-align:center;z-index:5;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.28);opacity:0;animation:sfade 1s ease forwards 1.6s}
+#splash .s-status .blink{display:inline-block;animation:sblink 1.6s ease-in-out infinite}
+@keyframes sblink{0%,100%{opacity:.35}50%{opacity:1}}
+#splash .s-dots::after{content:'';animation:sdots 1.4s steps(1,end) infinite}
+@keyframes sdots{0%{content:''}25%{content:'.'}50%{content:'..'}75%,100%{content:'...'}}
+@keyframes sfade{to{opacity:1}}
+@keyframes splashOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+
+/* ===== SNAP DOTS ===== */
+.snap-dots{position:fixed;right:22px;top:50%;transform:translateY(-50%);z-index:900;display:flex;flex-direction:column;gap:13px}
+.snap-dots button{width:9px;height:9px;border-radius:50%;border:none;background:rgba(255,255,255,0.18);cursor:pointer;padding:0;transition:all .25s}
+.snap-dots button:hover{background:rgba(186,220,166,0.6)}
+.snap-dots button.active{background:var(--g);transform:scale(1.35)}
+@media(max-width:900px){.snap-dots{display:none}}
+
+/* ===== SCROLL CUE ===== */
+.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:var(--g);opacity:.65;cursor:pointer;animation:bob 1.8s ease-in-out infinite;background:none;border:none}
+@keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+
+/* ===== PHASES (PLATAFORMA) ===== */
+.phase{margin-top:1.4rem}
+.phase-head{display:flex;align-items:center;gap:14px;margin-bottom:1.1rem}
+.phase-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--g);white-space:nowrap}
+.phase-line{flex:1;height:1px;background:var(--bd)}
+.phase-cards{display:flex;flex-wrap:wrap;gap:14px}
+.phase-cards .mod-cell{flex:1 1 230px;min-width:220px;border:1px solid var(--bd);border-radius:14px;background:var(--dark2)}
+.phase-cards .solo{flex:0 1 360px}
+@media(min-width:901px){.phase-cards{flex-wrap:nowrap}.phase-cards .mod-cell{flex:1 1 0;min-width:0}.phase-cards .solo{flex:0 1 360px}}
+
+/* ===== ADDONS ===== */
+#addons{background:transparent}
+.add-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:2.5rem}
+.add-card{border:1px solid var(--bd);border-radius:18px;padding:34px 30px;background:rgba(255,255,255,0.015);transition:border-color .25s,transform .25s}
+.add-card:hover{border-color:rgba(186,220,166,0.3);transform:translateY(-4px)}
+.add-icon{width:52px;height:52px;border-radius:13px;background:var(--gd);border:1px solid rgba(186,220,166,0.18);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.add-icon svg{stroke:var(--g)}
+.add-name{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:22px;color:var(--w);margin-bottom:10px}
+.add-desc{font-size:14px;color:var(--gray);line-height:1.6}
+.add-card .mod-tag{margin-top:14px}
+@media(max-width:900px){.add-grid{grid-template-columns:1fr}}
+
+/* whatsapp icon clean on green */
+.btn-primary svg,.btn-wa svg{fill:var(--dark)}
+
 </style>
 </head>
 <body>
+
+<!-- SPLASH -->
+<div id="splash" role="button" tabindex="0" aria-label="Entrar no site">
+  <div class="s-layer s-hex2" data-sdepth="14"></div>
+  <div class="s-layer s-hex" data-sdepth="26"></div>
+  <div class="s-glow"></div>
+  <div class="s-content" data-sdepth="-10">
+    <div class="s-logo">VEXIS<span class="dot">.</span><span class="tech">TECH</span></div>
+    <div class="s-slogan">Sistemas que simplificam,<br>resultados que impressionam.</div>
+    <div class="s-line"></div>
+  </div>
+  <div class="s-status"><span class="blink">Carregando sistema</span><span class="s-dots"></span></div>
+  <div class="s-bar"></div>
+</div>
+
 
 <!-- NAV -->
 <nav id="navbar">
 <div class="nav-inner">
   <a href="#hero" class="nav-logo">VEXIS<span class="dot">.</span>TECH</a>
   <ul class="nav-links">
-    <li><a href="#modulos">Módulos</a></li>
-    <li><a href="#velocidade">Tecnologia</a></li>
+    <li><a href="#plataforma">Plataforma</a></li>
+    <li><a href="#addons">Add-ons</a></li>
     <li><a href="#para-quem">Para quem</a></li>
-    <li><a href="#como-funciona">Como funciona</a></li>
+    <li><a href="#processo">Como funciona</a></li>
   </ul>
   <div class="nav-cta">
     <a href="#contato" class="btn btn-outline">Fale com a gente</a>
-    <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-primary" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20saber%20sobre%20a%20Vexis." class="btn btn-primary" target="_blank">WhatsApp</a>
   </div>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#modulos" onclick="closeMenu()">Módulos</a>
-  <a href="#velocidade" onclick="closeMenu()">Tecnologia</a>
+  <a href="#plataforma" onclick="closeMenu()">Plataforma</a>
+  <a href="#addons" onclick="closeMenu()">Add-ons</a>
   <a href="#para-quem" onclick="closeMenu()">Para quem</a>
-  <a href="#como-funciona" onclick="closeMenu()">Como funciona</a>
+  <a href="#processo" onclick="closeMenu()">Como funciona</a>
   <a href="#contato" onclick="closeMenu()">Contato</a>
-  <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20saber%20sobre%20o%20credenciamento%20Vexis." class="btn btn-wa" target="_blank">WhatsApp ↗</a>
+  <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20saber%20sobre%20a%20Vexis." class="btn btn-wa" target="_blank">WhatsApp →</a>
 </div>
 
-<!-- HERO -->
+<!-- 01 HERO -->
 <section id="hero" class="hex-bg">
-<div class="container">
-  <div class="hero-content">
-    <h1>CREDENCIAMENTO<br>QUE <span class="acc">NÃO PARA.</span></h1>
-    <p class="mt-2" style="max-width:560px;font-size:clamp(15px,1.6vw,19px)">Operamos o credenciamento do seu evento com tecnologia própria. <strong>100% offline</strong> — sem depender da internet do local.</p>
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-n">&lt;8s</div><div class="hstat-l">por credenciamento</div></div>
-      <div class="hstat"><div class="hstat-n">100%</div><div class="hstat-l">offline-first</div></div>
-      <div class="hstat"><div class="hstat-n">8+</div><div class="hstat-l">módulos integrados</div></div>
-    </div>
-    <div class="hero-ctas">
-      <a href="#modulos" class="btn btn-outline">Ver módulos ↓</a>
+  <div class="hero-fx"><div class="hexmove" data-depth="22"></div><div class="glow" data-depth="13"></div></div>
+  <div class="container">
+    <div class="hero-content" data-depth="-7">
+      <h1 class="reveal" style="--i:0">CREDENCIAMENTO<br>QUE <span class="acc">NÃO PARA.</span></h1>
+      <p class="reveal mt-2" style="--i:1;max-width:560px;font-size:clamp(15px,1.6vw,19px)">Um ecossistema conectado, com arquitetura <strong>offline-first</strong>: a internet para, seu evento não.</p>
+      <div class="hero-stats">
+        <div class="hstat reveal" style="--i:2"><div class="hstat-n">&lt;8s</div><div class="hstat-l">por credenciamento</div></div>
+        <div class="hstat reveal" style="--i:3"><div class="hstat-n">Único</div><div class="hstat-l">do briefing ao relatório</div></div>
+        <div class="hstat reveal" style="--i:4"><div class="hstat-n">7+</div><div class="hstat-l">módulos integrados</div></div>
+      </div>
+      <div class="hero-ctas reveal" style="--i:5">
+        <a href="#plataforma" class="btn btn-outline">Ver a plataforma →</a>
+      </div>
     </div>
   </div>
-</div>
+  <button class="scroll-cue" onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})" aria-label="Rolar">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
 </section>
 
-<div class="divider"></div>
-
-<!-- PROBLEMA -->
+<!-- 02 PROBLEMA -->
 <section id="problema">
 <div class="container">
-  <span class="lbl fade-up">O problema</span>
-  <h2 class="fade-up">Por que credenciamento<br><span class="acc">ainda trava eventos.</span></h2>
+  <span class="lbl reveal">O problema</span>
+  <h2 class="reveal acc-grow">Por que o evento<br><span class="acc">ainda trava na entrada.</span></h2>
   <div class="pain-grid">
-    <div class="pain-card fade-up">
+    <div class="pain-card reveal" style="--i:0">
       <div class="pain-n">01</div>
       <div class="pain-t">Filas que constrangem</div>
-      <p class="pain-p">Os participantes chegam ao evento e encontram filas de 15, 20 minutos. A primeira impressão é a pior possível — antes mesmo de começar.</p>
+      <p class="pain-p">O participante chega animado e encontra 20 minutos de fila. A primeira impressão do seu evento vira frustração — antes de tudo começar.</p>
     </div>
-    <div class="pain-card fade-up">
+    <div class="pain-card reveal" style="--i:1">
       <div class="pain-n">02</div>
-      <div class="pain-t">Tudo depende da internet</div>
-      <p class="pain-p">A conexão do local é instável ou cai na hora do pico. O sistema para. Alguns fornecedores chegam a cobrar R$3.800 só pelo link de internet.</p>
+      <div class="pain-t">Refém da internet</div>
+      <p class="pain-p">Quando tudo depende da conexão do local, qualquer instabilidade trava o evento inteiro. E um link dedicado de verdade custa caro.</p>
     </div>
-    <div class="pain-card fade-up">
+    <div class="pain-card reveal" style="--i:2">
       <div class="pain-n">03</div>
-      <div class="pain-t">Sistemas que não conversam</div>
-      <p class="pain-p">Credenciamento, chapelaria, controle de acesso e plenária: cada um de um fornecedor diferente. Sem integração, sem dado consolidado.</p>
+      <div class="pain-t">Cada coisa num lugar</div>
+      <p class="pain-p">Credenciamento aqui, chapelaria ali, controle de acesso em outro sistema. Nada conversa, nada se consolida — e você termina sem visão nenhuma.</p>
     </div>
   </div>
 </div>
 </section>
 
-<div class="divider"></div>
+<!-- 03 VELOCIDADE -->
+<section id="velocidade">
+<div class="container">
+  <span class="lbl reveal">Velocidade</span>
+  <h2 class="reveal acc-grow">O método certo<br><span class="acc">elimina a fila.</span></h2>
+  <p class="reveal mt-1" style="max-width:600px">A diferença entre digitar CPF e ler um QR não é detalhe: é <strong>mais que o dobro de gente atendida</strong> com a mesma estrutura. O QR enviado antes do evento é o que faz a fila simplesmente não existir.</p>
+  <div class="vel-grid" style="grid-template-columns:repeat(2,1fr);max-width:760px">
+    <div class="vel-card reveal" style="--i:0">
+      <div class="vel-name">CPF — digitação</div>
+      <div><span class="vel-time">20</span><span class="vel-unit">s</span></div>
+      <div class="vel-cap"><strong>180</strong> pessoas/estação/hora</div>
+      <p class="vel-note" style="color:rgba(255,255,255,0.3)">Sem nada prévio. Indicado para eventos menores.</p>
+    </div>
+    <div class="vel-card best reveal" style="--i:1">
+      <div class="vel-badge">Recomendado</div>
+      <div class="vel-name">QR Code</div>
+      <div><span class="vel-time" style="color:var(--g)">8</span><span class="vel-unit">s</span></div>
+      <div class="vel-cap"><strong>450</strong> pessoas/estação/hora</div>
+      <p class="vel-note" style="color:rgba(186,220,166,0.6)">QR enviado por e-mail ou WhatsApp antes do evento. 2,5× mais rápido.</p>
+    </div>
+  </div>
+  <div class="vel-bars reveal" style="max-width:760px">
+    <div class="vbar-row">
+      <span class="vbar-label">QR Code (pré-enviado)</span>
+      <div class="vbar-bg"><div class="vbar-fill" style="width:100%;background:var(--g)"></div></div>
+      <span class="vbar-val" style="color:var(--g)">450 /h</span>
+    </div>
+    <div class="vbar-row">
+      <span class="vbar-label">CPF digitação</span>
+      <div class="vbar-bg"><div class="vbar-fill" style="width:40%;background:var(--gray)"></div></div>
+      <span class="vbar-val" style="color:var(--gray)">180 /h</span>
+    </div>
+  </div>
+</div>
+</section>
 
-<!-- OFFLINE FIRST -->
+<!-- 04 OFFLINE -->
 <section id="offline" class="hex-bg">
 <div class="container">
-  <span class="lbl fade-up">Nossa resposta</span>
-  <h2 class="fade-up">Offline-First.<br><span class="acc">A rede é sua.</span></h2>
-  <div class="off-block fade-up">
+  <span class="lbl reveal">Offline-first</span>
+  <h2 class="reveal acc-grow">Se a internet cair,<br><span class="acc">o evento nem sente.</span></h2>
+  <div class="off-block reveal">
     <div class="off-split">
       <div>
-        <h3>O servidor vai ao evento com você.</h3>
-        <p class="mt-1">A Vexis opera com servidor e rede próprios, levados a cada evento. O banco de dados fica localmente — nenhuma operação depende da internet do local.</p>
+        <h3>A Vexis leva a própria infraestrutura.</h3>
+        <p class="mt-1">Servidor e rede dedicados entram com a gente, dentro do seu evento. Tudo roda ali, no local. A internet da casa vira detalhe — se oscilar, ninguém percebe.</p>
         <div class="off-items">
-          <div class="off-item"><span class="odot"></span><span>Servidor local rodando PostgreSQL + Next.js</span></div>
-          <div class="off-item"><span class="odot"></span><span>Rede WiFi dedicada e isolada do espaço do evento</span></div>
-          <div class="off-item"><span class="odot"></span><span>Backup automático a cada 30 minutos</span></div>
-          <div class="off-item"><span class="odot"></span><span>Internet usada apenas para sync com nuvem — opcional</span></div>
+          <div class="off-item"><span class="odot"></span><span>Servidor e rede próprios, montados no local</span></div>
+          <div class="off-item"><span class="odot"></span><span>Funciona com a internet caída, do começo ao fim</span></div>
+          <div class="off-item"><span class="odot"></span><span>Backup automático rodando o tempo todo</span></div>
         </div>
       </div>
       <div>
-        <h3>Se a internet cair, o evento continua.</h3>
-        <p class="mt-1">Credenciamento, chapelaria, controle de entrada e plenária continuam operando normalmente. Os dados são sincronizados automaticamente quando a conexão volta.</p>
+        <h3>O evento não para por nada.</h3>
+        <p class="mt-1">Credenciamento, entrada, chapelaria e plenária seguem operando normalmente. Quando a conexão volta, tudo sincroniza sozinho — sem você mexer em nada.</p>
         <div class="off-items">
-          <div class="off-item"><span class="odot"></span><span>Nenhuma ação manual necessária após reconexão</span></div>
-          <div class="off-item"><span class="odot"></span><span>QR Codes validados offline — sem consulta remota</span></div>
-          <div class="off-item"><span class="odot"></span><span>Logs auditáveis encadeados por SHA-256</span></div>
-          <div class="off-item"><span class="odot"></span><span>Monitoramento remoto via Tailscale quando disponível</span></div>
+          <div class="off-item"><span class="odot"></span><span>Servidor de backup pronto: se o principal cair, a operação assume em segundos</span></div>
+          <div class="off-item"><span class="odot"></span><span>Sincronização automática ao reconectar</span></div>
+          <div class="off-item"><span class="odot"></span><span>Crachás validados na hora, sem consulta externa</span></div>
+          <div class="off-item"><span class="odot"></span><span>Equipe técnica acompanhando tudo de perto</span></div>
         </div>
       </div>
     </div>
     <div class="arch-strip">
-      <div class="as"><div class="asn">Internet</div><div class="ast">Opcional</div></div>
+      <div class="as"><div class="asn">Rede dedicada</div><div class="ast">Montada no local</div></div>
       <span class="arr">→</span>
-      <div class="as"><div class="asn">Roteador</div><div class="ast">Rede dedicada</div></div>
+      <div class="as"><div class="asn">Servidor local</div><div class="ast">Tudo roda aqui</div></div>
       <span class="arr">→</span>
-      <div class="as"><div class="asn">Servidor</div><div class="ast">Banco local</div></div>
+      <div class="as"><div class="asn">Servidor backup</div><div class="ast">Assume em segundos</div></div>
       <span class="arr">→</span>
       <div class="as"><div class="asn">Terminais</div><div class="ast">Tablet + impressora</div></div>
-      <span class="arr" style="opacity:.15">↔</span>
-      <div class="as"><div class="asn">Nuvem</div><div class="ast">Sync automático</div></div>
+      <span class="arr" style="opacity:.2">→</span>
+      <div class="as"><div class="asn">Nuvem</div><div class="ast">Sync quando dá</div></div>
     </div>
-    <p class="off-quote">"A internet do evento pode falhar. A Vexis não."</p>
+    <p class="off-quote">"A internet do evento pode falhar. A Vexis, não."</p>
   </div>
 </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- MÓDULOS -->
-<section id="modulos">
+<!-- 05 PLATAFORMA -->
+<section id="plataforma">
 <div class="container">
-  <span class="lbl fade-up">Plataforma</span>
-  <h2 class="fade-up">Um sistema.<br><span class="acc">Todo o evento.</span></h2>
-  <p class="fade-up mt-1" style="max-width:560px">Módulos integrados que cobrem cada ponto de contato — do credenciamento ao relatório final. Tudo em uma única plataforma.</p>
-  <div class="mod-grid">
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg></div>
-      <div class="mod-name">Credenciamento</div>
-      <p class="mod-desc">QR Code, CPF ou Face ID. Self-service ou balcão. Impressão em menos de 8 segundos.</p>
+  <span class="lbl reveal">Plataforma</span>
+  <h2 class="reveal acc-grow">Um sistema.<br><span class="acc">Todo o evento.</span></h2>
+  <p class="reveal mt-1" style="max-width:600px">Do primeiro cadastro ao relatório final — cada etapa do evento em uma só plataforma, com tudo conversando entre si.</p>
+
+  <div class="phase reveal">
+    <div class="phase-head"><span class="phase-tag">Pré-evento</span><span class="phase-line"></span></div>
+    <div class="phase-cards">
+      <div class="mod-cell solo">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M8 9h8M8 13h5"/></svg></div>
+        <div class="mod-name">Credenciamento</div>
+        <p class="mod-desc">QR Code ou CPF, self-service ou balcão. Crachá impresso em menos de 8 segundos.</p>
+      </div>
     </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 12h-4m0 0V8m0 4v4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
-      <div class="mod-name">Controle de Entrada</div>
-      <p class="mod-desc">Valida o QR único do crachá. Token criptografado invalidado a cada reimpressão.</p>
+  </div>
+
+  <div class="phase reveal">
+    <div class="phase-head"><span class="phase-tag">Durante o evento</span><span class="phase-line"></span></div>
+    <div class="phase-cards">
+      <div class="mod-cell">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 12h-4m0 0V8m0 4v4"/><rect x="3" y="3" width="18" height="18" rx="2"/></svg></div>
+        <div class="mod-name">Controle de Entrada</div>
+        <p class="mod-desc">Valida o QR único do crachá. Token criptografado, invalidado a cada reimpressão.</p>
+      </div>
+      <div class="mod-cell">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 0-3 .5-3 2v14c0 1.5 1.5 2 3 2s3-.5 3-2V5c0-1.5-1.5-2-3-2z"/><path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/></svg></div>
+        <div class="mod-name">Chapelaria</div>
+        <p class="mod-desc">Guarda-volumes digital. Etiqueta numerada vinculada ao crachá, retirada por QR.</p>
+      </div>
+      <div class="mod-cell">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="3"/><path d="M6.5 17.5c.3-1.2 1-2.3 2-3M17.5 17.5c-.3-1.2-1-2.3-2-3M12 3v2M12 19v2"/></svg></div>
+        <div class="mod-name">Plenária</div>
+        <p class="mod-desc">Controle de presença por sala e palestra. Audiência medida sessão a sessão.</p>
+      </div>
+      <div class="mod-cell">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
+        <div class="mod-name">Cred Local</div>
+        <p class="mod-desc">Servidor reserva sempre de prontidão. Se o principal falhar, a operação assume o controle em segundos — e o credenciamento não para um instante.</p>
+      </div>
+      <div class="mod-cell">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+        <div class="mod-name">Dashboard em tempo real</div>
+        <p class="mod-desc">Credenciados, fila e pico ao vivo — para a equipe e para o cliente acompanharem.</p>
+      </div>
     </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-1.5 0-3 .5-3 2v14c0 1.5 1.5 2 3 2s3-.5 3-2V5c0-1.5-1.5-2-3-2z"/><path d="M7 7H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M17 7h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2h-2"/></svg></div>
-      <div class="mod-name">Chapelaria</div>
-      <p class="mod-desc">Guarda-volumes digital. Etiqueta numerada vinculada ao crachá. Retirada por QR.</p>
+  </div>
+
+  <div class="phase reveal">
+    <div class="phase-head"><span class="phase-tag">Pós-evento</span><span class="phase-line"></span></div>
+    <div class="phase-cards">
+      <div class="mod-cell solo">
+        <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div>
+        <div class="mod-name">Relatórios</div>
+        <p class="mod-desc">Números completos do evento: total, horário de pico, presença por sala e lista nominal auditável.</p>
+      </div>
     </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="11" r="3"/><path d="M6.5 17.5c.3-1.2 1-2.3 2-3M17.5 17.5c-.3-1.2-1-2.3-2-3M12 3v2M12 19v2"/></svg></div>
-      <div class="mod-name">Plenária</div>
-      <p class="mod-desc">Controle de presença por sala e palestra. Relatório de audiência por sessão.</p>
-    </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg></div>
-      <div class="mod-name">Cred Local</div>
-      <p class="mod-desc">Cadastra no local quem não está na lista. 100% offline com sync automático.</p>
-    </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
-      <div class="mod-name">Dashboard</div>
-      <p class="mod-desc">KPIs em tempo real para a equipe e para o cliente. Credenciados, fila, pico.</p>
-    </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h11"/><circle cx="19" cy="18" r="3"/><path d="M21 20l-1.5-1.5"/></svg></div>
-      <div class="mod-name">Landing Page</div>
-      <p class="mod-desc">Inscrição white-label com QR automático. Sem Sympla, sem Eventbrite. Captação de leads.</p>
+  </div>
+</div>
+</section>
+
+<!-- 06 ADDONS -->
+<section id="addons">
+<div class="container">
+  <span class="lbl reveal">Add-ons</span>
+  <h2 class="reveal acc-grow">Quer ir além?<br><span class="acc">A gente leva.</span></h2>
+  <p class="reveal mt-1" style="max-width:560px">Módulos extras que ampliam o alcance do seu evento — antes, durante e depois.</p>
+  <div class="add-grid">
+    <div class="add-card reveal" style="--i:0">
+      <div class="add-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M8 14h5"/></svg></div>
+      <div class="add-name">Landing Page</div>
+      <p class="add-desc">Página de inscrição white-label com QR automático. Sem Sympla, sem Eventbrite — com a cara do seu evento.</p>
       <span class="mod-tag tag-a">Em breve</span>
     </div>
-    <div class="mod-cell fade-up">
-      <div class="mod-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M6 21v-1a6 6 0 0 1 12 0v1"/><path d="M4 8a8 8 0 0 1 8-8"/><circle cx="19" cy="5" r="1" fill="currentColor"/></svg></div>
-      <div class="mod-name">Face ID</div>
-      <p class="mod-desc">Reconhecimento facial pré-capturado. 7 segundos. Sem celular na mão.</p>
-      <span class="mod-tag tag-a">Em breve · Pro</span>
+    <div class="add-card reveal" style="--i:1">
+      <div class="add-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-1.5-1.5"/></svg></div>
+      <div class="add-name">Captação de Leads</div>
+      <p class="add-desc">Cada leitura de crachá vira lead qualificado para expositores e patrocinadores. Dado limpo, na hora.</p>
+      <span class="mod-tag tag-a">Em breve</span>
+    </div>
+    <div class="add-card reveal" style="--i:2">
+      <div class="add-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+      <div class="add-name">Sinalização Digital</div>
+      <p class="add-desc">A mesma comunicação em todo o evento — TVs, painéis de LED e tablets sempre alinhados, controlados de um só lugar.</p>
+      <span class="mod-tag tag-a">Em breve</span>
     </div>
   </div>
 </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- VELOCIDADE -->
-<section id="velocidade">
+<!-- 08 PROCESSO -->
+<section id="processo" class="hex-bg">
 <div class="container">
-  <span class="lbl fade-up">Velocidade</span>
-  <h2 class="fade-up">O método certo<br><span class="acc">elimina a fila.</span></h2>
-  <p class="fade-up mt-1" style="max-width:580px">A diferença entre CPF e QR não é preferência — é <strong>2,5× mais capacidade</strong> com o mesmo hardware. O pré-envio do QR antes do evento é o que transforma o credenciamento.</p>
-  <div class="vel-grid">
-    <div class="vel-card fade-up">
-      <div class="vel-name">CPF — digitação</div>
-      <div><span class="vel-time">20</span><span class="vel-unit">s</span></div>
-      <div class="vel-cap"><strong>180</strong> px/kiosk/hora</div>
-      <p class="vel-note" style="color:rgba(255,255,255,0.3)">Sem pré-envio necessário. Recomendado para eventos até 300 participantes.</p>
+  <span class="lbl reveal">Processo</span>
+  <h2 class="reveal acc-grow">Do contrato<br><span class="acc">ao relatório.</span></h2>
+  <div class="flow-steps">
+    <div class="fstep reveal" style="--i:0">
+      <div class="fnum">01</div>
+      <div class="ftag">Pré-evento</div>
+      <div class="ftitle">Briefing e importação</div>
+      <p class="ftext">Você envia a lista de participantes. A Vexis importa, gera os QR Codes e dispara por e-mail ou WhatsApp com a identidade do evento.</p>
     </div>
-    <div class="vel-card best fade-up">
-      <div class="vel-badge">300px+</div>
-      <div class="vel-name">QR Code</div>
-      <div><span class="vel-time" style="color:var(--g)">8</span><span class="vel-unit">s</span></div>
-      <div class="vel-cap"><strong>450</strong> px/kiosk/hora</div>
-      <p class="vel-note" style="color:rgba(186,220,166,0.6)">QR enviado por email ou WhatsApp antes do evento. 2,5× mais rápido que CPF.</p>
+    <div class="fstep reveal" style="--i:1">
+      <div class="fnum">02</div>
+      <div class="ftag">Montagem</div>
+      <div class="ftitle">Setup no local</div>
+      <p class="ftext">A equipe chega com toda a infraestrutura: servidor, rede, tablets e impressoras. Setup completo em menos de 1 hora.</p>
     </div>
-    <div class="vel-card fade-up" style="border-color:rgba(186,220,166,0.18);background:rgba(186,220,166,0.03)">
-      <div class="vel-badge" style="background:rgba(186,220,166,0.18);color:var(--g)">Pro</div>
-      <div class="vel-name">Face ID pré-capturado</div>
-      <div><span class="vel-time">7</span><span class="vel-unit">s</span></div>
-      <div class="vel-cap"><strong>514</strong> px/kiosk/hora</div>
-      <p class="vel-note" style="color:rgba(186,220,166,0.5)">Participante olha para a câmera. Reconhece em milissegundos. Sem celular, sem atrito.</p>
+    <div class="fstep reveal" style="--i:2">
+      <div class="fnum">03</div>
+      <div class="ftag">Dia do evento</div>
+      <div class="ftitle">Operação assistida</div>
+      <p class="ftext">Equipe técnica presente o tempo todo. Dashboard ao vivo. Qualquer intercorrência resolvida na hora, sem travar o fluxo.</p>
     </div>
-  </div>
-  <div class="vel-bars fade-up">
-    <div class="vbar-row">
-      <span class="vbar-label">Face ID pré-capturado</span>
-      <div class="vbar-bg"><div class="vbar-fill" style="width:100%;background:var(--g)"></div></div>
-      <span class="vbar-val" style="color:var(--g)">514 px/h</span>
-    </div>
-    <div class="vbar-row">
-      <span class="vbar-label">QR Code</span>
-      <div class="vbar-bg"><div class="vbar-fill" style="width:87%;background:rgba(186,220,166,0.7)"></div></div>
-      <span class="vbar-val" style="color:rgba(186,220,166,0.7)">450 px/h</span>
-    </div>
-    <div class="vbar-row">
-      <span class="vbar-label">CPF digitação</span>
-      <div class="vbar-bg"><div class="vbar-fill" style="width:35%;background:var(--gray)"></div></div>
-      <span class="vbar-val" style="color:var(--gray)">180 px/h</span>
+    <div class="fstep reveal" style="--i:3">
+      <div class="fnum">04</div>
+      <div class="ftag">Pós-evento</div>
+      <div class="ftitle">Relatório final</div>
+      <p class="ftext">Em até 48h: relatório completo com total de credenciados, horário de pico, presença por sala e lista nominal auditável.</p>
     </div>
   </div>
 </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- PARA QUEM -->
+<!-- 09 PARA QUEM -->
 <section id="para-quem">
 <div class="container">
-  <span class="lbl fade-up">Para quem</span>
-  <h2 class="fade-up">A solução certa<br><span class="acc">para cada perfil.</span></h2>
+  <span class="lbl reveal">Por quê</span>
+  <h2 class="reveal acc-grow">A solução certa<br><span class="acc">para cada perfil.</span></h2>
   <div class="pq-grid">
-    <div class="pq-card fade-up">
-      <div class="pq-type">Organizadores de eventos</div>
+    <div class="pq-card reveal" style="--i:0">
       <div class="pq-title">Você quer um evento profissional, sem surpresas.</div>
       <div class="pq-items">
         <div class="pq-item">Credenciamento rápido que não enfileira seus convidados</div>
         <div class="pq-item">Sistema que funciona mesmo se o WiFi do local cair</div>
-        <div class="pq-item">Dados de presença e relatório final em até 48h</div>
-        <div class="pq-item">Sem necessidade de tecnologia prévia do seu lado</div>
-        <div class="pq-item">Dashboard em tempo real para acompanhar durante o evento</div>
-        <div class="pq-item">LGPD: dados excluídos em 30 dias após o evento</div>
+        <div class="pq-item">Dashboard em tempo real durante o evento</div>
+        <div class="pq-item">Relatório final completo em até 48h</div>
+        <div class="pq-item">Sem precisar de nenhuma tecnologia do seu lado</div>
+        <div class="pq-item">LGPD: dados excluídos após o evento</div>
       </div>
     </div>
-    <div class="pq-card hl fade-up">
-      <div class="pq-type">Agências e produtoras</div>
+    <div class="pq-card reveal" style="--i:1">
       <div class="pq-title">Você quer entregar mais sem ampliar o time.</div>
       <div class="pq-items">
-        <div class="pq-item">Sistema white-label — entregue com a identidade visual do evento</div>
+        <div class="pq-item">Sistema white-label — com a identidade visual do evento</div>
         <div class="pq-item">Módulos à la carte: leve só o que o evento precisa</div>
         <div class="pq-item">Operação técnica completa — nós cuidamos, você assina</div>
         <div class="pq-item">Proposta detalhada com escopo, equipamentos e valores</div>
-        <div class="pq-item">Infraestrutura de rede própria — sem depender do venue</div>
-        <div class="pq-item">Parceria: seja o ponto de contato técnico do seu cliente</div>
+        <div class="pq-item">Infraestrutura própria — sem depender do venue</div>
+        <div class="pq-item">Parceria: seja o ponto de contato técnico do cliente</div>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<div class="divider"></div>
-
-<!-- COMO FUNCIONA -->
-<section id="como-funciona" class="hex-bg">
-<div class="container">
-  <span class="lbl fade-up">Processo</span>
-  <h2 class="fade-up">Do contrato<br><span class="acc">ao relatório.</span></h2>
-  <div class="flow-steps">
-    <div class="fstep fade-up">
-      <div class="fnum">01</div>
-      <div class="ftag">Pré-evento</div>
-      <div class="ftitle">Briefing e importação</div>
-      <p class="ftext">Você envia a lista de participantes. A Vexis importa, gera os QR Codes e os dispara por email ou WhatsApp com a identidade do evento.</p>
-    </div>
-    <div class="fstep fade-up">
-      <div class="fnum">02</div>
-      <div class="ftag">Montagem</div>
-      <div class="ftitle">Setup no local</div>
-      <p class="ftext">Equipe Vexis chega com toda a infraestrutura: servidor, roteador, AP WiFi, tablets e impressoras. Setup completo em menos de 1 hora.</p>
-    </div>
-    <div class="fstep fade-up">
-      <div class="fnum">03</div>
-      <div class="ftag">Dia do evento</div>
-      <div class="ftitle">Operação assistida</div>
-      <p class="ftext">Equipe técnica presente durante todo o evento. Dashboard em tempo real. Qualquer intercorrência resolvida na hora, sem travar o fluxo.</p>
-    </div>
-    <div class="fstep fade-up">
-      <div class="fnum">04</div>
-      <div class="ftag">Pós-evento</div>
-      <div class="ftitle">Relatório final</div>
-      <p class="ftext">Em até 48h: relatório completo com total de credenciados, horário de pico, presença por sala e lista nominal auditada por SHA-256.</p>
-    </div>
-  </div>
-</div>
-</section>
-
-<div class="divider"></div>
-
-<!-- CONTATO -->
+<!-- 10 CONTATO -->
 <section id="contato">
 <div class="container">
   <div style="max-width:680px;margin:0 auto;text-align:center">
-    <span class="lbl fade-up">Contato</span>
-    <h2 class="fade-up">Vamos falar sobre<br><span class="acc">o seu evento.</span></h2>
-    <p class="fade-up mt-1">Conte os detalhes e receba uma proposta personalizada. Respondemos em até 24 horas.</p>
+    <span class="lbl reveal">Contato</span>
+    <h2 class="reveal acc-grow" style="display:inline-block">Vamos falar sobre<br><span class="acc">o seu evento.</span></h2>
+    <p class="reveal mt-1">Conte os detalhes e receba uma proposta personalizada. Respondemos em até 24 horas.</p>
   </div>
-  <div class="form-card fade-up" style="max-width:680px;margin:2.5rem auto 0">
+  <div class="form-card reveal" style="max-width:680px;margin:2.5rem auto 0">
     <form onsubmit="submitForm(event)">
       <div class="form-row">
-        <div class="form-group">
-          <label>Nome</label>
-          <input type="text" name="nome" placeholder="Seu nome" required>
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" name="email" placeholder="seu@email.com" required>
-        </div>
+        <div class="form-group"><label>Nome</label><input type="text" name="nome" placeholder="Seu nome" required></div>
+        <div class="form-group"><label>E-mail</label><input type="email" name="email" placeholder="seu@email.com" required></div>
       </div>
       <div class="form-row">
-        <div class="form-group">
-          <label>Tipo de evento</label>
-          <select name="tipo">
-            <option value="">Selecione</option>
-            <option>Congresso / Conferência</option>
-            <option>Feira / Exposição</option>
-            <option>Evento corporativo</option>
-            <option>Workshop / Curso</option>
-            <option>Show / Festa</option>
-            <option>Outro</option>
-          </select>
+        <div class="form-group"><label>Tipo de evento</label>
+          <select name="tipo"><option value="">Selecione</option><option>Congresso / Conferência</option><option>Feira / Exposição</option><option>Evento corporativo</option><option>Workshop / Curso</option><option>Show / Festa</option><option>Outro</option></select>
         </div>
-        <div class="form-group">
-          <label>Participantes esperados</label>
-          <select name="participantes">
-            <option value="">Selecione</option>
-            <option>Até 200</option>
-            <option>200 a 500</option>
-            <option>500 a 1.000</option>
-            <option>1.000 a 3.000</option>
-            <option>Mais de 3.000</option>
-          </select>
+        <div class="form-group"><label>Participantes esperados</label>
+          <select name="participantes"><option value="">Selecione</option><option>Até 200</option><option>200 a 500</option><option>500 a 1.000</option><option>1.000 a 3.000</option><option>Mais de 3.000</option></select>
         </div>
       </div>
-      <div class="form-group">
-        <label>Mensagem</label>
-        <textarea name="mensagem" placeholder="Conte um pouco sobre o evento: data, local, o que precisa..."></textarea>
-      </div>
+      <div class="form-group"><label>Mensagem</label><textarea name="mensagem" placeholder="Conte um pouco sobre o evento: data, local, o que precisa..."></textarea></div>
       <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;font-size:15px">Enviar mensagem →</button>
     </form>
   </div>
-  <div style="text-align:center;margin-top:1.5rem" class="fade-up">
-    <a href="https://wa.me/5541998885770?text=Olá!%20Quero%20um%20orçamento%20para%20credenciamento%20do%20meu%20evento." class="btn btn-primary" target="_blank" style="display:inline-flex;gap:8px;align-items:center">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 15 3.8 13.47 3.8 11.91C3.81 7.37 7.5 3.67 12.05 3.67M8.53 7.33C8.37 7.33 8.1 7.39 7.87 7.64C7.65 7.89 7 8.5 7 9.71C7 10.93 7.89 12.1 8 12.27C8.14 12.44 9.76 14.94 12.25 16C12.84 16.27 13.3 16.42 13.66 16.53C14.25 16.72 14.79 16.69 15.22 16.63C15.7 16.56 16.68 16.03 16.89 15.45C17.1 14.87 17.1 14.37 17.04 14.27C16.97 14.17 16.81 14.1 16.56 13.98C16.31 13.86 15.09 13.26 14.87 13.18C14.64 13.1 14.5 13.06 14.31 13.3C14.22 13.44 13.88 13.86 13.71 14.05C13.56 14.25 13.39 14.27 13.16 14.16C13 14.11 12.43 13.92 11.75 13.32C11.22 12.86 10.86 12.28 10.75 12.05C10.64 11.82 10.74 11.7 10.85 11.58C10.96 11.47 11.13 11.29 11.25 11.14C11.38 10.99 11.42 10.89 11.5 10.7C11.58 10.54 11.54 10.39 11.47 10.27C11.42 10.17 11.06 8.93 10.86 8.42C10.67 7.92 10.46 7.96 10.31 7.95C10.16 7.94 10 7.93 9.83 7.93C9.66 7.93 9.38 7.99 9.15 8.25C8.93 8.5 8.2 9.19 8.2 10.4C8.2 11.6 9.17 12.77 9.3 12.94C9.43 13.1 11.06 15.56 13.5 16.5C14.66 17 15.58 17.22 16.31 17.38C17.06 17.56 17.73 17.53 18.27 17.44C18.87 17.34 20.22 16.74 20.5 16.1C20.77 15.46 20.77 14.92 20.7 14.8C20.63 14.67 20.47 14.61 20.22 14.5L8.53 7.33Z"/></svg>
+  <div style="text-align:center;margin-top:1.5rem" class="reveal">
+    <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20o%20meu%20evento." class="btn btn-primary" target="_blank" style="display:inline-flex;gap:9px;align-items:center">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.511 5.26l-.999 3.648 3.477-.911zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
       Falar agora pelo WhatsApp
     </a>
   </div>
@@ -584,10 +675,11 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
     <div>
       <div class="footer-logo">VEXIS<span class="dot">.</span>TECH</div>
       <p style="font-size:12px;color:rgba(255,255,255,0.25);margin-top:6px;font-weight:400">Sistemas que simplificam, resultados que impressionam.</p>
+      <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:4px;font-weight:400">A Vexis cuida de tudo que envolve o participante — do briefing ao relatório.</p>
     </div>
     <ul class="footer-links">
-      <li><a href="#modulos">Módulos</a></li>
-      <li><a href="#velocidade">Tecnologia</a></li>
+      <li><a href="#plataforma">Plataforma</a></li>
+      <li><a href="#addons">Add-ons</a></li>
       <li><a href="#para-quem">Para quem</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
@@ -598,42 +690,144 @@ footer{background:var(--dark);border-top:1px solid var(--bd);padding:48px 0 32px
 
 <script>
 // NAV scroll
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
-});
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
 
-// Mobile menu
-function toggleMenu() {
-  document.getElementById('mobileMenu').classList.toggle('open');
-}
-function closeMenu() {
-  document.getElementById('mobileMenu').classList.remove('open');
-}
+// PARALLAX no site todo: a textura de hexagonos do fundo acompanha o mouse
+(function(){
+  var mx=0,my=0,cx=0,cy=0,root=document.documentElement;
+  window.addEventListener('pointermove',function(e){
+    mx=(e.clientX/window.innerWidth-0.5)*2;
+    my=(e.clientY/window.innerHeight-0.5)*2;
+  },{passive:true});
+  (function loop(){
+    cx+=(mx-cx)*0.06; cy+=(my-cy)*0.06;
+    root.style.setProperty('--hx',(cx*30).toFixed(1)+'px');
+    root.style.setProperty('--hy',(cy*30).toFixed(1)+'px');
+    requestAnimationFrame(loop);
+  })();
+})();
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
+function closeMenu(){document.getElementById('mobileMenu').classList.remove('open');}
 
-// IntersectionObserver fade-up
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
-}, { threshold: 0.12 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+// REVEAL: monta o conteudo ao entrar na pagina; remonta toda vez que volta (troca de pagina)
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  e.target.classList.toggle('in', e.isIntersecting);
+});},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
 
-// Form → WhatsApp
-function submitForm(e) {
-  e.preventDefault();
-  const f = e.target;
-  const nome = f.nome.value;
-  const email = f.email.value;
-  const tipo = f.tipo.value || 'Não informado';
-  const px = f.participantes.value || 'Não informado';
-  const msg = f.mensagem.value;
-  const subject = encodeURIComponent('Orçamento Vexis — ' + (tipo !== 'Não informado' ? tipo : 'Novo contato'));
-  const body = encodeURIComponent(
-    'Nome: ' + nome + '\n' +
-    'E-mail: ' + email + '\n' +
-    'Tipo de evento: ' + tipo + '\n' +
-    'Participantes esperados: ' + px + '\n\n' +
-    'Mensagem:\n' + msg
-  );
-  window.location.href = 'mailto:jean@vexistech.com.br?subject=' + subject + '&body=' + body;
+// SPLASH: clica (ou Enter) e entra no site. Auto-entra apos carregar. Parallax sutil.
+(function(){
+  var sp=document.getElementById('splash'); if(!sp) return;
+  document.body.style.overflow='hidden';
+  var done=false;
+  function enter(){
+    if(done) return; done=true;
+    sp.classList.add('hide');
+    document.body.style.overflow='';
+    setTimeout(function(){sp&&sp.parentNode&&sp.remove();},650);
+  }
+  // primeira pagina FIXA: nao some sozinha; o usuario passa (clique / scroll / toque / seta)
+  sp.addEventListener('click',enter);
+  sp.addEventListener('pointerdown',enter);
+  sp.addEventListener('wheel',enter,{passive:true});
+  sp.addEventListener('touchmove',enter,{passive:true});
+  window.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '||e.key==='Escape'||e.key==='ArrowDown'||e.key==='PageDown')enter();});
+  // quando a barra termina de "carregar", convida a entrar (segue sem sumir sozinha)
+  var st=sp.querySelector('.s-status');
+  setTimeout(function(){ if(st && !done) st.innerHTML='<span class="blink">Toque ou role para entrar</span>'; },2800);
+
+  // --- parallax sutil (drift + mouse + touch + giroscopio) ---
+  var layers=[].slice.call(sp.querySelectorAll('[data-sdepth]'));
+  if(!layers.length) return;
+  var t=0,mx=0,my=0,cx=0,cy=0,tx=0,ty=0,ctx=0,cty=0;
+  sp.addEventListener('pointermove',function(e){
+    var r=sp.getBoundingClientRect();
+    mx=((e.clientX-r.left)/r.width-0.5)*2;
+    my=((e.clientY-r.top)/r.height-0.5)*2;
+  },{passive:true});
+  sp.addEventListener('pointerleave',function(){mx=0;my=0;});
+  window.addEventListener('deviceorientation',function(e){
+    if(e.gamma==null) return;
+    tx=Math.max(-1,Math.min(1,e.gamma/30));
+    ty=Math.max(-1,Math.min(1,(e.beta-45)/30));
+  });
+  (function loop(){
+    if(done) return;
+    t+=0.006;
+    var dx=Math.sin(t)*0.6, dy=Math.cos(t*0.75)*0.6;
+    cx+=(mx-cx)*0.06; cy+=(my-cy)*0.06;
+    ctx+=(tx-ctx)*0.05; cty+=(ty-cty)*0.05;
+    var X=dx + cx*1.6 + ctx*1.3;
+    var Y=dy + cy*1.6 + cty*1.3;
+    layers.forEach(function(l){
+      var d=+l.dataset.sdepth;
+      l.style.transform='translate('+(X*d).toFixed(2)+'px,'+(Y*d).toFixed(2)+'px)';
+    });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// PARALLAX hero — drift automatico + mouse + tilt (giroscopio)
+(function(){
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var hero=document.getElementById('hero'); if(!hero) return;
+  var layers=[].slice.call(hero.querySelectorAll('[data-depth]'));
+  if(!layers.length) return;
+  var t=0,mx=0,my=0,cx=0,cy=0,tx=0,ty=0,ctx=0,cty=0;
+  hero.addEventListener('pointermove',function(e){
+    var r=hero.getBoundingClientRect();
+    mx=((e.clientX-r.left)/r.width-0.5)*2;
+    my=((e.clientY-r.top)/r.height-0.5)*2;
+  },{passive:true});
+  hero.addEventListener('pointerleave',function(){mx=0;my=0;});
+  window.addEventListener('deviceorientation',function(e){
+    if(e.gamma==null) return;
+    tx=Math.max(-1,Math.min(1,e.gamma/30));
+    ty=Math.max(-1,Math.min(1,(e.beta-45)/30));
+  });
+  (function loop(){
+    t+=0.006;
+    var dx=Math.sin(t)*0.6, dy=Math.cos(t*0.75)*0.6;
+    cx+=(mx-cx)*0.06; cy+=(my-cy)*0.06;
+    ctx+=(tx-ctx)*0.05; cty+=(ty-cty)*0.05;
+    var X=dx + cx*1.3 + ctx*1.2;
+    var Y=dy + cy*1.3 + cty*1.2;
+    layers.forEach(function(l){
+      var d=+l.dataset.depth;
+      var base=l.classList.contains('glow')?'translate(-50%,-50%) ':'';
+      l.style.transform=base+'translate('+(X*d).toFixed(2)+'px,'+(Y*d).toFixed(2)+'px)';
+    });
+    requestAnimationFrame(loop);
+  })();
+})();
+
+// SNAP DOTS
+(function(){
+  var secs=Array.prototype.slice.call(document.querySelectorAll('section[id]'));
+  if(!secs.length||window.innerWidth<=900) return;
+  var wrap=document.createElement('div'); wrap.className='snap-dots';
+  secs.forEach(function(s){
+    var b=document.createElement('button'); b.setAttribute('aria-label',s.id);
+    b.onclick=function(){s.scrollIntoView({behavior:'smooth'});};
+    b._sec=s; wrap.appendChild(b);
+  });
+  document.body.appendChild(wrap);
+  var dots=Array.prototype.slice.call(wrap.children);
+  var dio=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){dots.forEach(function(d){d.classList.toggle('active',d._sec===e.target);});}
+  });},{threshold:0.5});
+  secs.forEach(function(s){dio.observe(s);});
+})();
+
+// Form -> email
+function submitForm(e){
+  e.preventDefault();var f=e.target;
+  var nome=f.nome.value,email=f.email.value,tipo=f.tipo.value||'Não informado',px=f.participantes.value||'Não informado',msg=f.mensagem.value;
+  var subject=encodeURIComponent('Orçamento Vexis — '+(tipo!=='Não informado'?tipo:'Novo contato'));
+  var body=encodeURIComponent('Nome: '+nome+'\n'+'E-mail: '+email+'\n'+'Tipo de evento: '+tipo+'\n'+'Participantes esperados: '+px+'\n\n'+'Mensagem:\n'+msg);
+  window.location.href='mailto:jean@vexistech.com.br?subject='+subject+'&body='+body;
 }
 </script>
 </body>
