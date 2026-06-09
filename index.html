@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -351,7 +351,7 @@ h1.reveal.in,h2.reveal.in{letter-spacing:0;filter:blur(0)}
   </ul>
   <div class="nav-cta">
     <a href="#contato" class="btn btn-outline">Fale com a gente</a>
-    <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20saber%20sobre%20a%20Vexis." class="btn btn-primary" target="_blank">WhatsApp</a>
+    <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20o%20meu%20evento." class="btn btn-primary" target="_blank">WhatsApp</a>
   </div>
   <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
 </div>
@@ -363,7 +363,7 @@ h1.reveal.in,h2.reveal.in{letter-spacing:0;filter:blur(0)}
   <a href="#para-quem" onclick="closeMenu()">Para quem</a>
   <a href="#processo" onclick="closeMenu()">Como funciona</a>
   <a href="#contato" onclick="closeMenu()">Contato</a>
-  <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20saber%20sobre%20a%20Vexis." class="btn btn-wa" target="_blank">WhatsApp →</a>
+  <a href="https://wa.me/5541998885770?text=Ol%C3%A1!%20Quero%20um%20or%C3%A7amento%20para%20o%20meu%20evento." class="btn btn-wa" target="_blank">WhatsApp →</a>
 </div>
 
 <!-- 01 HERO -->
@@ -698,8 +698,9 @@ h1.reveal.in,h2.reveal.in{letter-spacing:0;filter:blur(0)}
       <li><a href="#para-quem">Para quem</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-  </div>
-  <p class="footer-copy">© 2026 Vexis Tech — Curitiba, PR · jean@vexistech.com.br</p>
+
+    <div style="display:flex;gap:16px;align-items:center;margin-top:12px"><a href="https://www.instagram.com/vexis.tech.eventos/" target="_blank" title="Instagram" style="color:rgba(255,255,255,0.4)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg></a><a href="https://www.linkedin.com/in/vexis-tech-101976414/" target="_blank" title="LinkedIn" style="color:rgba(255,255,255,0.4)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a></div>  </div>
+  <p class="footer-copy">© 2026 Vexis Tech — Curitiba, PR · contatos@vexistech.com.br</p>
 </div>
 </footer>
 </section>
@@ -838,13 +839,24 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   secs.forEach(function(s){dio.observe(s);});
 })();
 
-// Form -> email
+// Form -> Web3Forms
 function submitForm(e){
-  e.preventDefault();var f=e.target;
-  var nome=f.nome.value,email=f.email.value,tipo=f.tipo.value||'Não informado',px=f.participantes.value||'Não informado',msg=f.mensagem.value;
-  var subject=encodeURIComponent('Orçamento Vexis — '+(tipo!=='Não informado'?tipo:'Novo contato'));
-  var body=encodeURIComponent('Nome: '+nome+'\n'+'E-mail: '+email+'\n'+'Tipo de evento: '+tipo+'\n'+'Participantes esperados: '+px+'\n\n'+'Mensagem:\n'+msg);
-  window.location.href='mailto:jean@vexistech.com.br?subject='+subject+'&body='+body;
+  e.preventDefault();
+  var f=e.target,btn=f.querySelector('[type=submit]');
+  btn.disabled=true;btn.textContent='Enviando...';
+  fetch('https://api.web3forms.com/submit',{
+    method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({
+      access_key:'d7d8ce5e-2e88-4a09-a0af-7b5990aa1f46',
+      subject:'Orcamento Vexis - '+(f.tipo.value||'Contato'),
+      from_name:'Site Vexis Tech',
+      name:f.nome.value,email:f.email.value,replyto:f.email.value,
+      message:'Tipo: '+f.tipo.value+'\nParticipantes: '+f.participantes.value+'\n\n'+f.mensagem.value
+    })
+  }).then(function(r){return r.json();}).then(function(r){
+    if(r.success){btn.textContent='Mensagem enviada!';f.reset();setTimeout(function(){btn.disabled=false;btn.textContent='Enviar mensagem';},3500);}
+    else{btn.disabled=false;btn.textContent='Erro. Tente novamente.';}
+  }).catch(function(){btn.disabled=false;btn.textContent='Erro. Tente novamente.';});
 }
 </script>
 </body>
