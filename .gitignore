@@ -35,6 +35,11 @@ service-account*.json
 secret*
 .secure-*
 
+# keystores/assinatura de release (fio B keystore, 2026-07-18)
+*.jks
+*.keystore
+!debug.keystore
+
 # preserva templates *.example (cura do shadow secret*/*.example - fio A, 2026-07-18)
 !*.example
 !*.example.*
