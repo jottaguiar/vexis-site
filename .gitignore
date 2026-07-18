@@ -21,3 +21,16 @@ service-account*.json
 privkey*.pem
 *.p12
 .secure-*
+
+# === VEXIS: gitignore canonico de segredos (fio A camp.1, 2026-07-18) ===
+.env
+.env.*
+!.env*.example
+*.bak
+*.bak-*
+*-key.pem
+*.p12
+*.pfx
+service-account*.json
+secret*
+.secure-*
