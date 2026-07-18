@@ -34,3 +34,7 @@ privkey*.pem
 service-account*.json
 secret*
 .secure-*
+
+# preserva templates *.example (cura do shadow secret*/*.example - fio A, 2026-07-18)
+!*.example
+!*.example.*
