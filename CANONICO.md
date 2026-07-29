@@ -56,7 +56,17 @@ ecossistema de credenciamento para eventos e capta leads (formulario de proposta
 
 - **Nao ha versionamento de release, nem exe, nem APK, nem pipeline.** O "deploy" de um site estatico
   de 1 arquivo e publicar o `index.html`.
-- **Onde esta publicado: NAO CONFIRMADO neste repo.** Nao ha `CNAME`, workflow do GitHub Actions, nem
+- **Onde esta publicado: CONFIRMADO POR MEDICAO em 2026-07-29 -- CLOUDFLARE PAGES LIGADO NO REPO.**
+  `git push origin main` **E** o deploy: nao ha painel, workflow nem passo manual.
+  **Como foi descoberto: EMPURRANDO, nao perguntando.** Os cabecalhos nao entregavam (`server: cloudflare`,
+  `cf-cache-status: DYNAMIC`, zero marcador de Vercel/Netlify/Pages -- a Cloudflare esconde a origem).
+  Hipotese: sem CNAME + sem workflow + servido por Cloudflare = Pages-on-push. **Push do `44ab92d` e medicao
+  da pagina NO AR confirmaram**, em menos de 2 minutos.
+  🔑 **CRITERIO DE ACEITE DE TODO DEPLOY DESTE SITE (usar sempre):** medir a **PAGINA NO AR**, nunca o commit.
+  *Prova do 44ab92d:* `crach` **7 -> 0** · `Sistema de sorteio` 0 -> 1 · `Certificado digital` 0 -> 1 ·
+  `duplicatas` 0 -> 1 · `LGPD` 1 -> 4 · `vexis_tech_credenciamento` 0 -> 1.
+  **"Dei push" NAO e prova: deploy de conteudo se prova por DIFERENCA MEDIDA NO AR.**
+- ~~Onde esta publicado: NAO CONFIRMADO~~ *(fechado 29/07)* Nao ha `CNAME`, workflow do GitHub Actions, nem
   config de Vercel/Netlify/Pages versionado. O unico indicio e `og:url = https://vexistech.com.br`.
   Hipoteses (a verificar com o dono, fora do repo): GitHub Pages do `jottaguiar/vexis-site`, ou hospedagem
   estatica do dominio `vexistech.com.br`. **Pendencia: confirmar o host real de producao.**
@@ -79,7 +89,7 @@ ecossistema de credenciamento para eventos e capta leads (formulario de proposta
 
 ## 6) Pendencias
 
-- [ ] **Confirmar onde esta publicado** (GitHub Pages? host do dominio?) e documentar aqui. Adicionar
+- [x] ~~**Confirmar onde esta publicado**~~ **FEITO 29/07: Cloudflare Pages on push, provado no ar.** Resta (opcional) (GitHub Pages? host do dominio?) e documentar aqui. Adicionar
       `CNAME`/config de deploy ao repo se o host for Pages, para o deploy ficar reproduzivel.
 - [ ] **Alinhar copy ao single-server**: revisar os trechos de "servidor de backup / assume em segundos /
       servidor reserva" para nao prometer failover ativo (encerrado 2026-06-09). Manter o discurso
