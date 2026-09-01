@@ -2,6 +2,26 @@
 
 > **MD CANONICO — fonte da verdade de Vexis Site (institucional - investigar). Mexeu? Atualize AQUI.**
 
+> ## 🔴 RECONCILIAÇÃO 3.0 — 2026-09-01 (medido pelo juiz, nada apagado abaixo)
+> A **estrutura** que o corpo descreve está certa e foi re-provada (arquivo único estático sem build,
+> Web3Forms, WhatsApp, brandbook, efeitos client-side, repo autônomo; a §4 foi atualizada em 29/07 com o
+> deploy no Cloudflare Pages). **O que envelheceu foram as §1, §3 e §6 — o site recebeu 5 commits de
+> CONTEÚDO depois da auditoria de 20/06:**
+> | o doc diz | medido hoje |
+> |---|---|
+> | HEAD `431341d` (08/06) · 8 commits · 1 arquivo versionado (~55 KB, 877 linhas) | **HEAD `217c17a` (29/07)** · **18 commits** · **3 arquivos** (`.gitignore`, `CANONICO.md`, `index.html`) · `index.html` com **58.211 B / 908 linhas** |
+> | plataforma com **7** produtos | **12 cards** — entraram **Sorteio · Certificado digital · CAEX · QR por e-mail · Landing page** |
+> | *Landing Page = "Pacote"* | **"Pacote" não existe mais na página** (varredura: 0 ocorrências); Landing virou card da plataforma |
+> | **Face ID = "Em breve"** | 🔴 **Face ID é vendido como PRODUTO ATIVO** nos cards de Credenciamento e Controle de entrada (commit `4bc2c2e`). Os "Em breve" hoje são **só 3**: Leads, Sinalização, RFID ⇒ a pendência da §6 vale só para esses três |
+> | Instagram `@vexis.tech.eventos` | `instagram.com/vexis_tech_credenciamento` |
+> | copy *"Cred Local = servidor reserva de prontidão"* | **Sumiu.** O CredLocal hoje é vendido como **balcão** (cadastro na hora, 2ª via, correção) |
+>
+> ⚠️ **UMA COPY COMERCIAL QUE O PARQUE PRECISA SUSTENTAR:** *"Servidor de backup pronto… assume em
+> segundos"* **continua na página** (`index.html:474,486`). O parque é **servidor único `.10`** desde
+> 09/06 (failover encerrado por ordem do dono) — o que existe hoje é **offline-first nas pontas**, não
+> um servidor que assume. **Registrado para decisão do dono: ajustar a copy ou declarar o que ela
+> significa.** *(Achado desta campanha — nada foi mexido no site.)*
+
 Ultima auditoria: 2026-06-20 · HEAD `431341d` (commit de 2026-06-08 23:02 -03) · branch `main` · remote `github.com/jottaguiar/vexis-site`.
 
 ---
